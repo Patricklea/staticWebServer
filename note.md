@@ -44,3 +44,7 @@
 
 **process.cwd()**
 返回执行node启动命令时所在的路径,也就是`node <filename>`执行时的路径。
+
+**fs.stat()的用法**
+
+**fs.readdir()的用法**
