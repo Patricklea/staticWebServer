@@ -48,3 +48,9 @@
 **fs.stat()的用法**
 
 **fs.readdir()的用法**
+
+**process.pwd()与__dirname的区别**
+
+**path.join()的用法**
+**path.basename()的用法**
+**path.ralative()的用法**
