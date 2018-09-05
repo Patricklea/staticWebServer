@@ -5,7 +5,8 @@ const stat = promisify(fs.stat);
 const readdir = promisify(fs.readdir);
 const HandleBars = require('handlebars');
 const conf = require('../config/defaultConf');
-const mime = require('./mime.js')
+const mime = require('./mime')
+const compress = require('./compress')
 
 const tplPath = path.join(__dirname,'../template/dir.tpl');
 const source = fs.readFileSync(tplPath);
@@ -25,7 +26,12 @@ module.exports = async function (req, res, filePath) {
 			const contentType = mime(filePath);
 			res.statusCode = 200;
 			res.setHeader('Content-Type', `${contentType};charset=utf-8`);
-			fs.createReadStream(filePath).pipe(res);
+            let rs = fs.createReadStream(filePath);
+            // 匹配指定类型的文件进行压缩
+            if (filePath.match(conf.compress)){
+                rs = compress(rs,req,res)
+            }
+            rs.pipe(res);
 
 		} else if (stats.isDirectory()) {
 			const files = await readdir(filePath);
