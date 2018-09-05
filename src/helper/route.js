@@ -28,11 +28,11 @@ module.exports = async function (req, res, filePath) {
 			res.setHeader('Content-Type', `${contentType};charset=utf-8`);
 			let rs;
 			const {code,start,end} = range(stats.size, req, res);
-            if (code == 200) {
-                res.statusCode = 200;
+			if (code == 200) {
+				res.statusCode = 200;
 				rs = fs.createReadStream(filePath);
-            } else {
-                res.statusCode = 206;//代表返回部分数据
+			} else {
+				res.statusCode = 206;//代表返回部分数据
 				rs = fs.createReadStream(filePath,{start, end})
 			}
 			// 匹配指定类型的文件进行压缩
