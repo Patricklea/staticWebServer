@@ -184,7 +184,7 @@ module.exports = (filePath) => {
 		.split('.')
 		.pop() //针对xx.min.js这样的后缀，所以只返回最后的
 		.toLowerCase();
-
+    
 	if (!ext) {
 		ext = filePath;
 	}
