@@ -37,11 +37,11 @@ module.exports = async function (req, res, filePath) {
 				title: path.basename(filePath),
 				dir: dir ? `/${dir}` : '',
 				files: files.map(file => {
-                    return {
-                        file,
-                        icon: mime(file)
-                    }
-                }),
+					return {
+						file,
+						icon: mime(file)
+					}
+				}),
 			}
 			res.end(template(data)); 
 		}        
