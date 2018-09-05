@@ -54,3 +54,5 @@
 **path.join()的用法**
 **path.basename()的用法**
 **path.ralative()的用法**
+
+**通过path模块获取文件拓展名**
