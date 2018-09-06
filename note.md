@@ -61,6 +61,22 @@
 http的范围请求可通过`curl http://127.0.0.1:8888/note.md -i -r 0-1000`来测试。
 其中`-i`展示请求头，`-r 0-1000`表示范围请求及范围。
 
-
-
+**命令行中的可执行脚本**
+1. 新建test.js文件：
+    ```
+    #!/usr/bin/env node
+    console.log('hello world');    
+    ```
+其中`#!/usr/bin/env node`是Unix和Linux脚本语言的第一行，目的就是指出，你想要你的这个文件中的代码用什么可执行程序去运行它，也就是指定解释器。
+2. 修改test.js的权限，否则会提示找不到这个commond
+   ```
+   chmod 755 test.js
+   ```
+3. 现在，就可以在命令行中执行test.js了,在命令行中输入命令：
+    ```
+    ./test.js
+    ```
+参考： 
+[Node.js 命令行程序开发教程-阮一峰](http://www.ruanyifeng.com/blog/2015/05/command-line-with-node.html)
+[基于node构建命令行工具](http://www.skylerzhang.com/node/2015/01/08/commandline/)
 

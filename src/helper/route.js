@@ -4,7 +4,7 @@ const promisify = require('util').promisify;
 const stat = promisify(fs.stat);
 const readdir = promisify(fs.readdir);
 const HandleBars = require('handlebars');
-const conf = require('../config/defaultConf');
+// const conf = require('../config/defaultConf');
 const mime = require('./mime')
 const compress = require('./compress')
 const range = require('./range')
@@ -21,7 +21,7 @@ const template = HandleBars.compile(source.toString());
  * 用promisify改造之后，一定要放到一个 async 方法内执行；
  * 改造后的方法前面一定要用 await 接收，否则只会拿到一个Promise对象；
  */
-module.exports = async function (req, res, filePath) {
+module.exports = async function (req, res, filePath,conf) {
 	try {
 		const stats = await stat(filePath);
 		if (stats.isFile()) {

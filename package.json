@@ -3,6 +3,7 @@
     "lint": "eslint .",
     "fix": "eslint --fix ."
   },
+  "main": "src/app.js",
   "pre-commit": [
     "fix",
     "lint"
@@ -14,5 +15,8 @@
     "handlebars": "^4.0.11",
     "pre-commit": "^1.2.2",
     "supervisor": "^0.12.0"
+  },
+  "dependencies": {
+    "yargs": "^12.0.1"
   }
 }
