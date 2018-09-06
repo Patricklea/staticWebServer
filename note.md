@@ -67,7 +67,7 @@ http的范围请求可通过`curl http://127.0.0.1:8888/note.md -i -r 0-1000`来
     #!/usr/bin/env node
     console.log('hello world');    
     ```
-其中`#!/usr/bin/env node`是Unix和Linux脚本语言的第一行，目的就是指出，你想要你的这个文件中的代码用什么可执行程序去运行它，也就是指定解释器。
+其中`#!/usr/bin/env node`是Unix和Linux脚本文件的第一行，目的就是指出，你想要你的这个文件中的代码用什么可执行程序去运行它，也就是指定解释器。
 2. 修改test.js的权限，否则会提示找不到这个commond
    ```
    chmod 755 test.js
