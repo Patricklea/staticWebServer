@@ -26,15 +26,15 @@ module.exports = async function (req, res, filePath) {
 		const stats = await stat(filePath);
 		if (stats.isFile()) {
 			const contentType = mime(filePath);
-            res.setHeader('Content-Type', `${contentType};charset=utf-8`);
-            if(isFresh(stats, req, res)){
-                res.statusCode = 304;
-                res.end();
-                return;
-            }
+			res.setHeader('Content-Type', `${contentType};charset=utf-8`);
+			if(isFresh(stats, req, res)){
+				res.statusCode = 304;
+				res.end();
+				return;
+			}
 
 			let rs;
-            const {code,start,end} = range(stats.size, req, res);
+			const {code,start,end} = range(stats.size, req, res);
             
 			if (code == 200) {
 				res.statusCode = 200;
