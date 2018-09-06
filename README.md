@@ -1,11 +1,11 @@
-# anydoor
+# anydoor-cli
 
 A tiny nodejs web server.
 
 ## 安装
 
 ```
-npm i -g anydoor
+npm i -g anydoor-cli
 ```
 
 ## 使用方法
